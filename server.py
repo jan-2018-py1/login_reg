@@ -1,5 +1,5 @@
 from myconnection import MySQLConnector
-from flask import Flask, render_template, request, redirect, session, flask
+from flask import Flask, render_template, request, redirect, session, flash
 app = Flask(__name__)
 app.secret_key = "My secret session key"
 mysql = MySQLConnector(app, "login_reg_jan_2018")
@@ -7,7 +7,7 @@ mysql = MySQLConnector(app, "login_reg_jan_2018")
 @app.route("/")
 def index():
 	return render_template("index.html")
-	
+
 @app.route("/register", methods=["POST"])
 def register():
 	print request.form
