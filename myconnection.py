@@ -30,7 +30,7 @@ class MySQLConnection(object):
             # if the query was an insert, return the id of the
             # commit changes
             self.db.session.commit()
-            # row that was inserted
+            # id of last row that was inserted
             return result.lastrowid
         else:
             # if the query was an update or delete, return nothing and commit changes
